@@ -29,9 +29,9 @@ for arch in ${archs[@]}; do
 	XMRIG_DIR=`pwd`/build/src/xmrig/build/$xarch
     XMRIG_MO_DIR=`pwd`/build/src/xmrig-mo/build/$xarch
 
-	rm -Rf $ROOT_DIR/android/app/src/main/jniLibs/$xarch/*
-	cp $XMRIG_DIR/xmrig $ROOT_DIR/android/app/src/main/jniLibs/$xarch/libxmrig.so
-    cp $XMRIG_MO_DIR/xmrig $ROOT_DIR/android/app/src/main/jniLibs/$xarch/libxmrig-mo.so
+	rm -Rf $ROOT_DIR/android/app/src/main/jniLibs/$xarch/libxmrig.so
+	mv $XMRIG_DIR/xmrig $ROOT_DIR/android/app/src/main/jniLibs/$xarch/libxmrig.so
+    #cp $XMRIG_MO_DIR/xmrig $ROOT_DIR/android/app/src/main/jniLibs/$xarch/libxmrig-mo.so
 
 done
 exit 0

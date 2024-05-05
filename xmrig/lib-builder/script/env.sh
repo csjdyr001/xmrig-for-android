@@ -2,7 +2,7 @@ realpath() {
     [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
 }
 
-export NDK_VERSION=`$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --list_installed | grep "ndk;" |  head -n 1 | sed -E 's/(.*)(ndk\/)([0-9\.])/\3/' | xargs`
+export NDK_VERSION='26.3.11579264'
 export ANDROID_NDK_HOME="${ANDROID_HOME}/ndk/${NDK_VERSION}"
 export TOOLCHAINS_PATH=$(python script/toolchains_path.py --ndk ${ANDROID_NDK_HOME})
 export ANDROID_NDK_ROOT="${ANDROID_HOME}/ndk/${NDK_VERSION}"

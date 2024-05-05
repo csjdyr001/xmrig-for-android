@@ -11,7 +11,7 @@ mv TempCMakeLists.txt CMakeLists.txt
 mkdir build && cd build
 
 TOOLCHAIN=$ANDROID_HOME/ndk/$NDK_VERSION/build/cmake/android.toolchain.cmake
-CMAKE=$ANDROID_HOME/cmake/3.18.1/bin/cmake
+CMAKE=$ANDROID_HOME/cmake/3.22.1/bin/cmake
 ANDROID_PLATFORM=android-29
 
 archs=(arm arm64 x86 x86_64)

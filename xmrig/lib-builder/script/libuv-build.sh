@@ -8,7 +8,7 @@ cd $EXTERNAL_LIBS_BUILD_ROOT/libuv
 mkdir build && cd build
 
 TOOLCHAIN=$ANDROID_HOME/ndk/$NDK_VERSION/build/cmake/android.toolchain.cmake
-CMAKE=$ANDROID_HOME/cmake/3.18.1/bin/cmake
+CMAKE=$ANDROID_HOME/cmake/3.22.1/bin/cmake
 ANDROID_PLATFORM=android-29
 
 #if [ ! -f "configure" ]; then
@@ -19,19 +19,27 @@ archs=(arm arm64 x86 x86_64)
 for arch in ${archs[@]}; do
     case ${arch} in
         "arm")
-            target_host=arm-linux-androideabi
+            target_host=armv7a-linux-androideabi
+            CC=armv7a-linux-androideabi29-clang
+            CXX=armv7a-linux-androideabi29-clang++
             ANDROID_ABI="armeabi-v7a"
             ;;
         "arm64")
             target_host=aarch64-linux-android
+            CC=aarch64-linux-android29-clang
+            CXX=aarch64-linux-android29-clang++
             ANDROID_ABI="arm64-v8a"
             ;;
         "x86")
             target_host=i686-linux-android
+            CC=i686-linux-android29-clang
+            CXX=i686-linux-android29-clang++
             ANDROID_ABI="x86"
             ;;
         "x86_64")
             target_host=x86_64-linux-android
+            CC=x86_64-linux-android29-clang
+            CXX=x86_64-linux-android29-clang++
             ANDROID_ABI="x86_64"
             ;;
         *)

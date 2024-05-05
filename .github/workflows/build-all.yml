@@ -7,6 +7,7 @@ on:
     types: [closed]
     branches:
       - main
+  workflow_dispatch:
 
 #on:
 #  push:
@@ -21,11 +22,12 @@ jobs:
     steps:
     - uses: actions/setup-python@v2
       with:
-        python-version: '2.x'
+        python-version: '3.10'
         architecture: 'x64'
     - uses: nttld/setup-ndk@v1.0.6
       with:
-        ndk-version: r21e
+        ndk-version: r26
+
     - uses: actions/checkout@v2
     
     - name: Get version
@@ -41,20 +43,14 @@ jobs:
         
     - uses: actions/setup-node@v2
       with:
-        node-version: '17.1.0'
+        node-version: '20'
         cache: 'yarn'
-        
-    - name: Bump version
-      id: bump_version
-      uses: oflynned/Android-Semantic-Release@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
     - run: yarn
     - run: node update_version.js
-    
-    - name: Build XMRig, libUV, OpenSSL & hwloc
-      run: cd xmrig/lib-builder && mkdir build && mkdir build/src && mkdir build/build && make all && cd .. && cd .. 
+
+    - name: get XMRig
+      run: cd xmrig/lib-builder && mkdir build && mkdir build/src && mkdir build/build && make all > /dev/null  && cd .. && cd .. 
         
     - run: yarn
     - run: cd android && ./gradlew bundleRelease && cd ..

@@ -15,19 +15,19 @@ archs=(arm arm64 x86 x86_64)
 for arch in ${archs[@]}; do
     case ${arch} in
         "arm")
-            target_host=arm-linux-androideabi
+            target_host=armv7a-linux-androideabi29
             ANDROID_ABI="armeabi-v7a"
             ;;
         "arm64")
-            target_host=aarch64-linux-android
+            target_host=aarch64-linux-android29
             ANDROID_ABI="arm64-v8a"
             ;;
         "x86")
-            target_host=i686-linux-android
+            target_host=i686-linux-android29
             ANDROID_ABI="x86"
             ;;
         "x86_64")
-            target_host=x86_64-linux-android
+            target_host=x86_64-linux-android29
             ANDROID_ABI="x86_64"
             ;;
         *)
@@ -36,6 +36,7 @@ for arch in ${archs[@]}; do
     esac
 
     TARGET_DIR=$EXTERNAL_LIBS_ROOT/hwloc/$ANDROID_ABI
+    PATH=$ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
 
     if [ -f "$TARGET_DIR/lib/hwloc.la" ]; then
       continue
@@ -45,12 +46,14 @@ for arch in ${archs[@]}; do
     echo "building for ${arch}"
 
     PATH=$NDK_TOOL_DIR/$arch/$target_host/bin:$NDK_TOOL_DIR/$arch/bin:$PATH \
-        CC=clang CXX=clang++; \
-        ./configure \
+        ./configure CC=${target_host}-clang CXX=${target_host}-clang++ LD=lld\
         --prefix=${TARGET_DIR} \
         --host=${target_host} \
         --enable-static \
         --disable-shared \
+        --disable-io \
+        --disable-libudev \
+        --disable-libxml2 \
         && make -j 4 \
         && make install \
         && make clean
