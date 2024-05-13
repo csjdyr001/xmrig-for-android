@@ -9,23 +9,23 @@ mkdir build && cd build
 
 TOOLCHAIN=$ANDROID_HOME/ndk/$NDK_VERSION/build/cmake/android.toolchain.cmake
 CMAKE=$ANDROID_HOME/cmake/3.22.1/bin/cmake
-ANDROID_PLATFORM=android-29
+ANDROID_PLATFORM=android-28
 
-archs=(arm arm64 x86 x86_64)
+archs=(arm arm64)
 for arch in ${archs[@]}; do
     case ${arch} in
         "arm")
             target_host=armv7a-linux-androideabi
             ANDROID_ABI="armeabi-v7a"
-            CC=armv7a-linux-androideabi29-clang
-            CXX=armv7a-linux-androideabi29-clang++
+            CC=armv7a-linux-androideabi28-clang
+            CXX=armv7a-linux-androideabi28-clang++
             ARM_TARGET=7
             ;;
         "arm64")
             target_host=aarch64-linux-android
             ANDROID_ABI="arm64-v8a"
-            CC=aarch64-linux-android29-clang
-            CXX=aarch64-linux-android29-clang++
+            CC=aarch64-linux-android28-clang
+            CXX=aarch64-linux-android28-clang++
             ARM_TARGET=8
             ;;
         "x86")
@@ -66,7 +66,7 @@ for arch in ${archs[@]}; do
         -DCMAKE_INSTALL_PREFIX=$TARGET_DIR \
         -DANDROID_CROSS_COMPILE=ON \
         -DBUILD_SHARED_LIBS=OFF \
-        -DWITH_OPENCL=OFF \
+        -DWITH_OPENCL=ON \
         -DWITH_CUDA=OFF \
         -DBUILD_STATIC=OFF \
         -DWITH_TLS=ON \

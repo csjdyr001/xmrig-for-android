@@ -10,9 +10,9 @@ cd $EXTERNAL_LIBS_BUILD_ROOT/openssl
 #CC=clang
 PATH=$TOOLCHAINS_PATH/bin:$PATH
 ANDROID_API=29
-ANDROID_PLATFORM=android-29
+ANDROID_PLATFORM=android-28
 
-archs=(arm arm64 x86 x86_64)
+archs=(arm arm64)
 for arch in ${archs[@]}; do
     case ${arch} in
         "arm")

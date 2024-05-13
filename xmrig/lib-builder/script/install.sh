@@ -4,7 +4,7 @@ set -e
 
 source script/env.sh
 
-archs=(arm arm64 x86 x86_64)
+archs=(arm arm64)
 
 for arch in ${archs[@]}; do
     case ${arch} in

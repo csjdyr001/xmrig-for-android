@@ -11,23 +11,23 @@ if [ ! -f "configure" ]; then
   ./autogen.sh
 fi
 
-archs=(arm arm64 x86 x86_64)
+archs=(arm arm64)
 for arch in ${archs[@]}; do
     case ${arch} in
         "arm")
-            target_host=armv7a-linux-androideabi29
+            target_host=armv7a-linux-androideabi28
             ANDROID_ABI="armeabi-v7a"
             ;;
         "arm64")
-            target_host=aarch64-linux-android29
+            target_host=aarch64-linux-android28
             ANDROID_ABI="arm64-v8a"
             ;;
         "x86")
-            target_host=i686-linux-android29
+            target_host=i686-linux-android28
             ANDROID_ABI="x86"
             ;;
         "x86_64")
-            target_host=x86_64-linux-android29
+            target_host=x86_64-linux-android28
             ANDROID_ABI="x86_64"
             ;;
         *)
