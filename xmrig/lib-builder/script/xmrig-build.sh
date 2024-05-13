@@ -79,8 +79,6 @@ for arch in ${archs[@]}; do
         -DOPENSSL_CRYPTO_LIBRARY="$EXTERNAL_LIBS_ROOT/openssl/$ANDROID_ABI/lib/libcrypto.a" \
         -DOPENSSL_INCLUDE_DIR="$EXTERNAL_LIBS_ROOT/openssl/$ANDROID_ABI/include " \
         ../../ && make -j 4 CXXFLAGS="-flto" && cp xmrig $TARGET_DIR
-echo dir 
-ls -a
 
 done
 

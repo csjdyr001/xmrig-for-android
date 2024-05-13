@@ -57,5 +57,5 @@ jobs:
       with:
         name: dist-without-xmrig
         path: |
-          xmrig/lib-builder/script/build/src/xmrig/arm64-v8a/xmrig
-          xmrig/lib-builder/script/build/src/xmrig/armeabi-v7a/xmrig
+          xmrig/lib-builder/build/src/xmrig/build/arm64-v8a
+          xmrig/lib-builder/build/src/xmrig/build/armeabi-v7a
