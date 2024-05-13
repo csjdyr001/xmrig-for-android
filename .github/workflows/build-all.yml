@@ -50,12 +50,12 @@ jobs:
     - run: node update_version.js
 
     - name: get XMRig
-      run: cd xmrig/lib-builder && mkdir build && mkdir build/src && mkdir build/build && make all > /dev/null && cd .. && cd .. 
+      run: cd xmrig/lib-builder && mkdir build && mkdir build/src && mkdir build/build && make all && cd .. && cd .. 
         
     - name: Archive production artifacts
       uses: actions/upload-artifact@v4
       with:
         name: dist-without-xmrig
         path: |
-          xmrig/lib-builder/script/build/src/xmrig/build/arm64-v8a/xmrig
-          xmrig/lib-builder/script/build/src/xmrig/build/armeabi-v7a/xmrig
+          xmrig/lib-builder/script/build/src/xmrig/arm64-v8a/xmrig
+          xmrig/lib-builder/script/build/src/xmrig/armeabi-v7a/xmrig
