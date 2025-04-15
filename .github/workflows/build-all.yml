@@ -63,8 +63,8 @@ jobs:
       run: df -h
 
     # 测试时注释掉，加快编译速度 
-    #- name: Build XMRig, libUV, OpenSSL & hwloc
-    #  run: cd xmrig/lib-builder && mkdir build && mkdir build/src && mkdir build/build && make all && cd .. && cd .. 
+    - name: Build XMRig, libUV, OpenSSL & hwloc
+      run: cd xmrig/lib-builder && mkdir build && mkdir build/src && mkdir build/build && make all && cd .. && cd .. 
 
     - name: Create Output Directory
       run: mkdir -p ./android/app/build/outputs/bundle/release/
@@ -83,7 +83,6 @@ jobs:
         mkdir -p ./android/app/build/outputs/bundle/release/
 
     - run: cd android && ./gradlew assembleRelease bundleRelease --stacktrace --info && cd ..
-    #- run: cd android && ./gradlew assembleRelease --stacktrace --info && cd ..
     
     - name: install bundletool
       uses: enniel/bundletool-runner@v1.1.0
@@ -98,18 +97,18 @@ jobs:
     - run: mv ./android/app/build/outputs/bundle/release/app-release.apk ./android/app/build/outputs/bundle/release/xmrig-for-android_v${{ steps.bump_version.outputs.new_tag }}.apk
     - run: mv ./android/app/build/outputs/bundle/release/app-release.aab ./android/app/build/outputs/bundle/release/xmrig-for-android_v${{ steps.bump_version.outputs.new_tag }}.aab
     
-    - name: Sign app APK
-      uses: r0adkll/sign-android-release@v1
+    #- name: Sign app APK
+    #  uses: r0adkll/sign-android-release@v1
       # ID used to access action output
-      id: sign_app
-      with:
-        releaseDirectory: ./android/app/build/outputs/bundle/release
-        signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-        alias: ${{ secrets.ALIAS }}
-        keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-        keyPassword: ${{ secrets.KEY_PASSWORD }}
-      env:
-        BUILD_TOOLS_VERSION: "30.0.2"
+    #  id: sign_app
+    #  with:
+    #    releaseDirectory: ./android/app/build/outputs/bundle/release
+    #    signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+    #    alias: ${{ secrets.ALIAS }}
+    #    keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+    #    keyPassword: ${{ secrets.KEY_PASSWORD }}
+    #  env:
+    #    BUILD_TOOLS_VERSION: "30.0.2"
         
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
