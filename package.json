@@ -26,7 +26,7 @@
     "@babel/preset-react": "^7.16.7",
     "@brightlayer-ui/react-native-progress-icons": "^1.0.2",
     "@react-native-async-storage/async-storage": "^1.15.4",
-    "@react-native-community/blur": "Kureev/react-native-blur#6231655f961637701adc4672be2eed08e4cacef1",
+    "@react-native-community/blur": "^3.6.0",
     "@react-native-community/clipboard": "^1.5.1",
     "@react-native-community/hooks": "^2.8.1",
     "@react-native-community/masked-view": "*",
