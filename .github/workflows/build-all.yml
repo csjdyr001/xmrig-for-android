@@ -70,7 +70,20 @@ jobs:
       run: mkdir -p ./android/app/build/outputs/bundle/release/
         
     - run: yarn
-    - run: cd android && ./gradlew assembleRelease --stacktrace --info && cd ..
+    
+    - name: Install Dependencies
+      run: |
+        yarn install --frozen-lockfile
+        cd android && ./gradlew clean && cd ..
+
+    - name: Create Required Directories
+      run: |
+        mkdir -p ./android/app/libs
+        mkdir -p ./node_modules/react-native-splash-screen/android/libs
+        mkdir -p ./android/app/build/outputs/bundle/release/
+
+    - run: cd android && ./gradlew assembleRelease bundleRelease --stacktrace --info && cd ..
+    #- run: cd android && ./gradlew assembleRelease --stacktrace --info && cd ..
     
     - name: install bundletool
       uses: enniel/bundletool-runner@v1.1.0
