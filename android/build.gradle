@@ -23,13 +23,11 @@ buildscript {
 }
 
 allprojects {
-    /*
     gradle.projectsEvaluated {
         tasks.withType(JavaCompile) {
             options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
         }
     }
-    */
     repositories {
         exclusiveContent {
            // We get React Native's Android binaries exclusively through npm,
