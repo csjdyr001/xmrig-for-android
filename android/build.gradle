@@ -59,11 +59,7 @@ allprojects {
                 excludeGroup "com.facebook.react"
             }
         }
-        //jcenter()
-              jcenter() {
-            content {
-                includeModule("com.eightbitlab", "blurview")
-            }
+        jcenter()
         }
         google()
         maven { url 'https://www.jitpack.io' }
