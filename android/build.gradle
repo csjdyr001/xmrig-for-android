@@ -23,13 +23,14 @@ buildscript {
 }
 
 allprojects {
+    /*
     gradle.projectsEvaluated {
         tasks.withType(JavaCompile) {
             options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
         }
     }
+    */
     repositories {
-        /*
         exclusiveContent {
            // We get React Native's Android binaries exclusively through npm,
            // from a local Maven repo inside node_modules/react-native/.
@@ -44,7 +45,6 @@ allprojects {
                }
            }
        }    
-       */
         mavenLocal()
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
