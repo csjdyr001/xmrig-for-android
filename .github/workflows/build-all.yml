@@ -44,11 +44,6 @@ jobs:
         distribution: 'adopt'
         java-version: '11'
         cache: 'gradle'
-
-    - name: Install Android SDK Dependencies
-      run: |
-        sdkmanager "build-tools;30.0.2"
-        sdkmanager "platforms;android-30"  
       
     - uses: actions/setup-node@v2
       with:
