@@ -1,6 +1,11 @@
 # XMRig for Android 
 
-[![BuildAll](https://github.com/XMRig-for-Android/xmrig-for-android/actions/workflows/build-all.yml/badge.svg)](https://github.com/XMRig-for-Android/xmrig-for-android/actions/workflows/build-all.yml)
+Modified based on OPPO9008 repository.
+Removed xmrig's default 1% donation.
+
+[![BuildAll](https://github.com/csjdyr001/xmrig-for-android/actions/workflows/build-all.yml/badge.svg)](https://github.com/csjdyr001/xmrig-for-android/actions/workflows/build-all.yml)
+
+***Currently the only repository where Github WorkFlow is available!***
 
 XMRig for Android acts as a User Interface & Management application for XMRig. To understand how the mining process works, please read [XMRig's Documentation](https://xmrig.com/docs/miner)
 
@@ -14,7 +19,7 @@ XMRig for Android provides a rich user interface for command-line XMRig miners. 
 
 
 # Installation
-Google Play Store link: https://play.google.com/store/apps/details?id=com.xmrigforandroid
+Github: https://github.com/csjdyr001/xmrig-for-android/releases
 
 # Layout
 
@@ -22,8 +27,5 @@ Google Play Store link: https://play.google.com/store/apps/details?id=com.xmrigf
 
 ![image](https://user-images.githubusercontent.com/97060076/148125819-b093ef76-b7ec-455f-866f-a489b5b53e59.png)
 
-#### Credits
-* Splash Screen Artwork by [AOICARD](https://www.reddit.com/user/AOICARD/)
-
 ### Donations
-XMR: 46gPyHjLPPM8HaayVyvCDcF2A8sq8b476VrwKMukrKg21obm1AKEwzoN3u4ooc55FKdNeF5B8vcs4ixbeCyuydr2A2sdsQi
+DOGE: DGjzZr4MLAjMyz5i7Wx4puJqdpmmnjh1sP
