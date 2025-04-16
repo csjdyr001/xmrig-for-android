@@ -20,10 +20,11 @@ XMRig for Android provides a rich user interface for command-line XMRig miners. 
 
 # Installation
 Github: https://github.com/csjdyr001/xmrig-for-android/releases
+AppeTize: https://appetize.io/app/b_pbgty3dcbxjtk5dutyc7oe4vgm
 
 # Layout
 
-![](https://i.imgur.com/hIuB6Wo.png) ![](https://i.imgur.com/NqZAZPl.png)
+none
 
 ![image](https://user-images.githubusercontent.com/97060076/148125819-b093ef76-b7ec-455f-866f-a489b5b53e59.png)
 
