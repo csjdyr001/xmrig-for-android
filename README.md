@@ -30,4 +30,4 @@ none
 ![image](https://user-images.githubusercontent.com/97060076/148125819-b093ef76-b7ec-455f-866f-a489b5b53e59.png)
 
 ### Donations
-DOGE: DGjzZr4MLAjMyz5i7Wx4puJqdpmmnjh1sP
+USDT(TRC20): TFwHXCguEMfkkGYb8MGmn8ZxR6t6Cx9XdW
